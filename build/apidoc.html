@@ -1,0 +1,1915 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/niklasvh/mongoose-validators"
+
+    >mongoose-validators (v0.1.0)</a>
+</h1>
+<h4>Validators for Mongoose schemas with validator.js</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mongoose-validators">module mongoose-validators</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.blacklist">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>blacklist
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.contains">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>contains
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.equals">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>equals
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.escape">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>escape
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.extend">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>extend
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.init">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>init
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isAfter">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isAfter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isAlpha">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isAlpha
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isAlphanumeric">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isAlphanumeric
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isAscii">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isAscii
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isBase64">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isBase64
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isBefore">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isBefore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isByteLength">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isByteLength
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isCreditCard">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isCreditCard
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isDate">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isDate
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isDivisibleBy">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isDivisibleBy
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isEmail">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isEmail
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isFloat">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isFloat
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isFullWidth">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isFullWidth
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isHalfWidth">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isHalfWidth
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isHexColor">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isHexColor
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isHexadecimal">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isHexadecimal
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isIP">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isIP
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isISBN">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isISBN
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isIn">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isIn
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isInt">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isInt
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isJSON">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isJSON
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isLength">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isLength
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isLowercase">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isLowercase
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isMultibyte">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isMultibyte
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isNull">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isNull
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isNumeric">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isNumeric
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isSurrogatePair">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isSurrogatePair
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isURL">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isURL
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isUUID">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isUUID
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isUppercase">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isUppercase
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.isVariableWidth">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>isVariableWidth
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.ltrim">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>ltrim
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.matches">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>matches
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.rtrim">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>rtrim
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.stripLow">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>stripLow
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.toBoolean">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>toBoolean
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.toDate">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>toDate
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.toFloat">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>toFloat
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.toInt">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>toInt
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.trim">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>trim
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mongoose-validators.whitelist">
+            function <span class="apidocSignatureSpan">mongoose-validators.</span>whitelist
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mongoose-validators" id="apidoc.module.mongoose-validators">module mongoose-validators</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.blacklist" id="apidoc.element.mongoose-validators.blacklist">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>blacklist
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blacklist = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.contains" id="apidoc.element.mongoose-validators.contains">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>contains
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">contains = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.equals" id="apidoc.element.mongoose-validators.equals">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>equals
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equals = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.escape" id="apidoc.element.mongoose-validators.escape">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>escape
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escape = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.extend" id="apidoc.element.mongoose-validators.extend">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>extend
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.init" id="apidoc.element.mongoose-validators.init">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>init
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isAfter" id="apidoc.element.mongoose-validators.isAfter">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isAfter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAfter = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isAlpha" id="apidoc.element.mongoose-validators.isAlpha">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isAlpha
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAlpha = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isAlphanumeric" id="apidoc.element.mongoose-validators.isAlphanumeric">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isAlphanumeric
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAlphanumeric = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   // single validator
+   var Schema = new mongoose.Schema({
+       email: {type: String, validate: validators.isEmail()}
+   });
+
+   // multiple validators
+   var Schema = new mongoose.Schema({
+       username: {type: String, validate: [validators.<span class="apidocCodeKeywordSpan">isAlphanumeric</span>(), validators.isLength
+(2, 60)]}
+   });
+
+## Options
+
+Each validator type can be passed an optional `options` object as the first argument. The following common options can be defined
+:
+
+- **skipNull** - Skip validation if the value is null or undefined, default: false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isAscii" id="apidoc.element.mongoose-validators.isAscii">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isAscii
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAscii = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isBase64" id="apidoc.element.mongoose-validators.isBase64">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isBase64
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBase64 = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isBefore" id="apidoc.element.mongoose-validators.isBefore">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isBefore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBefore = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isByteLength" id="apidoc.element.mongoose-validators.isByteLength">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isByteLength
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isByteLength = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isCreditCard" id="apidoc.element.mongoose-validators.isCreditCard">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isCreditCard
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isCreditCard = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isDate" id="apidoc.element.mongoose-validators.isDate">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isDate
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDate = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isDivisibleBy" id="apidoc.element.mongoose-validators.isDivisibleBy">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isDivisibleBy
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDivisibleBy = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isEmail" id="apidoc.element.mongoose-validators.isEmail">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isEmail
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isEmail = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+var mongoose = require(&#x27;mongoose&#x27;),
+    validators = require(&#x27;mongoose-validators&#x27;);
+
+// single validator
+var Schema = new mongoose.Schema({
+    email: {type: String, validate: validators.<span class="apidocCodeKeywordSpan">isEmail</span>()}
+});
+
+// multiple validators
+var Schema = new mongoose.Schema({
+    username: {type: String, validate: [validators.isAlphanumeric(), validators.isLength(2, 60)]}
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isFloat" id="apidoc.element.mongoose-validators.isFloat">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isFloat
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFloat = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isFullWidth" id="apidoc.element.mongoose-validators.isFullWidth">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isFullWidth
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFullWidth = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isHalfWidth" id="apidoc.element.mongoose-validators.isHalfWidth">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isHalfWidth
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isHalfWidth = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isHexColor" id="apidoc.element.mongoose-validators.isHexColor">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isHexColor
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isHexColor = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isHexadecimal" id="apidoc.element.mongoose-validators.isHexadecimal">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isHexadecimal
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isHexadecimal = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isIP" id="apidoc.element.mongoose-validators.isIP">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isIP
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isIP = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isISBN" id="apidoc.element.mongoose-validators.isISBN">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isISBN
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isISBN = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isIn" id="apidoc.element.mongoose-validators.isIn">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isIn
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isIn = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isInt" id="apidoc.element.mongoose-validators.isInt">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isInt
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isInt = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isJSON" id="apidoc.element.mongoose-validators.isJSON">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isJSON
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isJSON = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isLength" id="apidoc.element.mongoose-validators.isLength">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isLength
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isLength = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   // single validator
+   var Schema = new mongoose.Schema({
+       email: {type: String, validate: validators.isEmail()}
+   });
+
+   // multiple validators
+   var Schema = new mongoose.Schema({
+       username: {type: String, validate: [validators.isAlphanumeric(), validators.<span class="apidocCodeKeywordSpan">isLength</
+span>(2, 60)]}
+   });
+
+## Options
+
+Each validator type can be passed an optional `options` object as the first argument. The following common options can be defined
+:
+
+- **skipNull** - Skip validation if the value is null or undefined, default: false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isLowercase" id="apidoc.element.mongoose-validators.isLowercase">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isLowercase
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isLowercase = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isMultibyte" id="apidoc.element.mongoose-validators.isMultibyte">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isMultibyte
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isMultibyte = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isNull" id="apidoc.element.mongoose-validators.isNull">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isNull
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNull = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isNumeric" id="apidoc.element.mongoose-validators.isNumeric">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isNumeric
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNumeric = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isSurrogatePair" id="apidoc.element.mongoose-validators.isSurrogatePair">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isSurrogatePair
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isSurrogatePair = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isURL" id="apidoc.element.mongoose-validators.isURL">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isURL
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isURL = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isUUID" id="apidoc.element.mongoose-validators.isUUID">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isUUID
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isUUID = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isUppercase" id="apidoc.element.mongoose-validators.isUppercase">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isUppercase
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isUppercase = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.isVariableWidth" id="apidoc.element.mongoose-validators.isVariableWidth">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>isVariableWidth
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isVariableWidth = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.ltrim" id="apidoc.element.mongoose-validators.ltrim">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>ltrim
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ltrim = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.matches" id="apidoc.element.mongoose-validators.matches">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>matches
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">matches = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.rtrim" id="apidoc.element.mongoose-validators.rtrim">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>rtrim
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rtrim = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.stripLow" id="apidoc.element.mongoose-validators.stripLow">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>stripLow
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stripLow = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.toBoolean" id="apidoc.element.mongoose-validators.toBoolean">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>toBoolean
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toBoolean = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.toDate" id="apidoc.element.mongoose-validators.toDate">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>toDate
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toDate = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.toFloat" id="apidoc.element.mongoose-validators.toFloat">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>toFloat
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toFloat = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.toInt" id="apidoc.element.mongoose-validators.toInt">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>toInt
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toInt = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.trim" id="apidoc.element.mongoose-validators.trim">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>trim
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trim = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mongoose-validators.whitelist" id="apidoc.element.mongoose-validators.whitelist">
+        function <span class="apidocSignatureSpan">mongoose-validators.</span>whitelist
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">whitelist = function (options) {
+    var hasOptions = typeof(options) === &#x22;object&#x22; &#x26;&#x26; !(options instanceof RegExp),
+        opts = hasOptions ? options : {},
+        skipNull = opts.skipNull ? true : false,
+        skipEmpty = opts.skipEmpty ? true : false,
+        args = [].slice.call(arguments, hasOptions &#x26;&#x26; method !== &#x22;isURL&#x22; ? 1 : 0);
+
+    return createValidator(function(value) {
+        if (skipNull &#x26;&#x26; (value === null || value === undefined)) {
+            return true;
+        } else if (skipEmpty &#x26;&#x26; (value === null || value === undefined || value === &#x22;&#x22;)) {
+            return true;
+        } else {
+            return validator[method].apply(null, [value].concat(args));
+        }
+    }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
